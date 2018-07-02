@@ -130,7 +130,7 @@ const vm = new Vue({
 
       // Save data
       localStorage.setItem('data', JSON.stringify(data));
-
+      data.numberLeftToFarm = obj.optimalQty - obj.qtyOwned;
       data.farmList = _.filter(data.unitList, obj => obj.qtyOwned < obj.optimalQty && obj.farm);
     },
   },

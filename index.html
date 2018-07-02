@@ -33,16 +33,11 @@
 	<div id="inputsContainer">
 		<div id="farmList">
 			<h4>Optimal Quantity</h4><span>Stages to farm are highlighted above</span>
-			<div class="farmRow" v-for="unit in farmList" :key="unit.name"><img :src="`files/img/${unit.img}.png`"> <span id="farmCount">x{{ unit.farmableFrags}}</span> <span id="daysRemaining">({{ unit.daysRemaining }} days)</span></div><button @click="addFarmedFrags()">Add</button></div>
+			<div class="farmRow" v-for="unit in farmList" :key="unit.name"><img :src="`files/img/${unit.img}.png`"> <span id="farmCount">x{{ unit.numberLeftToFarm}}</span></div>
 	</div>
 	<div id="unitInputs">
 		<div class="unitInput" v-for="unit in orderedUnitList"><a :href="`https://www.endlessfrontierdata.com/units/${unit.img}`" :class="unit.fragments < 10 ? 'zeroStar' : unit.fragments < 30 ? 'oneStar' : unit.fragments < 80 ? 'twoStar' : unit.fragments < 180 ? 'threeStar' : unit.fragments < 330 ? 'fourStar' : 'fiveStar'"><img :src="`files/img/${unit.img}.png`"></a>
 			<div><span class="unitName">{{ unit.name }}</span><br>
-				<fieldset class="starcounter"><input type="radio" :id="`${unit.name.replace(' ','')}-5star`" :name="`${unit.name.replace(' ','')}`" value="330" :checked="unit.fragments >= 330" @change="unit.fragments=330;updateFarmList()" /><label :for="`${unit.name.replace(' ','')}-5star`"><img src="files/img/star.png"></label><input
-						type="radio" :id="`${unit.name.replace(' ','')}-4star`" :name="`${unit.name.replace(' ','')}`" value="180" :checked="unit.fragments >= 180 && unit.fragments < 330" @change="unit.fragments=180;updateFarmList()" /><label :for="`${unit.name.replace(' ','')}-4star`"><img src="files/img/star.png"></label><input
-						type="radio" :id="`${unit.name.replace(' ','')}-3star`" :name="`${unit.name.replace(' ','')}`" value="80" :checked="unit.fragments >= 80 && unit.fragments < 180" @change="unit.fragments=80;updateFarmList()" /><label :for="`${unit.name.replace(' ','')}-3star`"><img src="files/img/star.png"></label><input
-						type="radio" :id="`${unit.name.replace(' ','')}-2star`" :name="`${unit.name.replace(' ','')}`" value="30" :checked="unit.fragments >= 30 && unit.fragments < 80" @change="unit.fragments=30;updateFarmList()" /><label :for="`${unit.name.replace(' ','')}-2star`"><img src="files/img/star.png"></label><input
-						type="radio" :id="`${unit.name.replace(' ','')}-1star`" :name="`${unit.name.replace(' ','')}`" value="10" :checked="unit.fragments >= 10 && unit.fragments < 30" @change="unit.fragments=10;updateFarmList()" /><label :for="`${unit.name.replace(' ','')}-1star`"><img src="files/img/star.png"></label></fieldset>
 				<input
 					v-model.number="unit.fragments" @change="updateFarmList()" type="number" step="1" min="0" max="999" style="clear:both;"><br /></div>
 		</div>
