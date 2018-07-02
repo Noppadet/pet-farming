@@ -6,69 +6,64 @@ Vue.directive('sortable', {
 });
 
 const originalData = {
-  version: '2.1.1',
-  petList: [
-    { name: 'Hippong', fragments: 0, img: 94, farm: true, index: 40, defaultTier: 1 },
-    { name: 'Tinkey', fragments: 10, img: 6, farm: true, index: 13, defaultTier: 2 },
-    { name: 'Icy', fragments: 10, img: 17, farm: true, index: 16, defaultTier: 3 },
-    { name: 'Cat Knight', fragments: 0, img: 136, farm: true, index: 47, defaultTier: 4 },
-    { name: 'Boom', fragments: 10, img: 28, farm: true, index: 19, defaultTier: 5 },
-    { name: 'Wakong', fragments: 0, img: 43, farm: true, index: 30, defaultTier: 6 },
-    { name: 'Octopa', fragments: 0, img: 139, farm: true, index: 50, defaultTier: 7 },
-    { name: 'Bamba', fragments: 0, img: 115, farm: true, index: 46, defaultTier: 8 },
-    { name: 'Cerbero', fragments: 0, img: 138, farm: true, index: 49, defaultTier: 9 },
-    { name: 'Seahorse', fragments: 0, img: 51, farm: true, index: 34, defaultTier: 10 },
-    { name: 'Moon', fragments: 10, img: 19, farm: true, index: 18, defaultTier: 11 },
-    { name: 'Sarah', fragments: 0, img: 55, farm: true, index: 35, defaultTier: 12 },
-    { name: 'E-77', fragments: 0, img: 48, farm: true, index: 31, defaultTier: 13 },
-    { name: 'Dark Snake', fragments: 0, img: 50, farm: true, index: 33, defaultTier: 14 },
-    { name: 'Windy', fragments: 0, img: 49, farm: true, index: 32, defaultTier: 15 },
-    { name: 'Athos', fragments: 0, img: 201, farm: true, index: 51, defaultTier: 16 },
-    { name: 'Grizzle', fragments: 0, img: 202, farm: true, index: 52, defaultTier: 17 },
-    { name: 'Raven', fragments: 0, img: 203, farm: true, index: 53, defaultTier: 18 },
-    { name: 'Leyak', fragments: 0, img: 204, farm: true, index: 54, defaultTier: 19 },
-    { name: 'Osma', fragments: 0, img: 95, farm: true, index: 41, defaultTier: 20 },
-    { name: 'Saul', fragments: 0, img: 96, farm: true, index: 42, defaultTier: 21 },
-    { name: 'Rena', fragments: 0, img: 93, farm: true, index: 39, defaultTier: 22 },
-    { name: 'Bernard', fragments: 0, img: 112, farm: true, index: 43, defaultTier: 23 },
-    { name: 'ChiChi', fragments: 0, img: 113, farm: true, index: 44, defaultTier: 24 },
-    { name: 'Mori', fragments: 0, img: 137, farm: true, index: 48, defaultTier: 25 },
-    { name: 'Mambo', fragments: 10, img: 1, farm: true, index: 0, defaultTier: 26 },
-    { name: 'Totem', fragments: 10, img: 16, farm: true, index: 15, defaultTier: 27 },
-    { name: 'Lamp', fragments: 10, img: 13, farm: true, index: 12, defaultTier: 28 },
-    { name: 'Sleepy', fragments: 10, img: 15, farm: true, index: 14, defaultTier: 29 },
-    { name: 'Jingger', fragments: 0, img: 38, farm: true, index: 25, defaultTier: 30 },
-    { name: 'Oscar', fragments: 0, img: 56, farm: true, index: 36, defaultTier: 31 },
-    { name: 'Nimbus', fragments: 0, img: 37, farm: true, index: 24, defaultTier: 32 },
-    { name: 'Mir', fragments: 10, img: 36, farm: true, index: 23, defaultTier: 33 },
-    { name: 'Squirrel', fragments: 10, img: 18, farm: true, index: 17, defaultTier: 34 },
-    { name: 'Phoenic', fragments: 10, img: 9, farm: true, index: 8, defaultTier: 35 },
-    { name: 'Devil', fragments: 10, img: 27, farm: true, index: 21, defaultTier: 36 },
-    { name: 'Chesher', fragments: 0, img: 114, farm: true, index: 45, defaultTier: 37 },
-    { name: 'Winky', fragments: 0, img: 40, farm: true, index: 27, defaultTier: 38 },
-    { name: 'Cora', fragments: 0, img: 42, farm: true, index: 29, defaultTier: 39 },
-    { name: 'Bunny', fragments: 0, img: 41, farm: true, index: 28, defaultTier: 40 },
-    { name: 'Indy', fragments: 10, img: 10, farm: true, index: 9, defaultTier: 41 },
-    { name: 'Snork', fragments: 10, img: 8, farm: true, index: 7, defaultTier: 42 },
-    { name: 'Piggy', fragments: 10, img: 4, farm: true, index: 3, defaultTier: 43 },
-    { name: 'Rapty', fragments: 0, img: 39, farm: true, index: 26, defaultTier: 44 },
-    { name: 'Black', fragments: 0, img: 57, farm: true, index: 37, defaultTier: 45 },
-    { name: 'Juda', fragments: 0, img: 58, farm: true, index: 38, defaultTier: 46 },
-    { name: 'Joe', fragments: 10, img: 2, farm: false, index: 1, defaultTier: 47 },
-    { name: 'Mummy', fragments: 10, img: 3, farm: false, index: 2, defaultTier: 48 },
-    { name: 'Potang', fragments: 10, img: 5, farm: false, index: 4, defaultTier: 49 },
-    { name: 'Uni', fragments: 10, img: 14, farm: false, index: 5, defaultTier: 50 },
-    { name: 'Joker', fragments: 10, img: 7, farm: false, index: 6, defaultTier: 51 },
-    { name: 'Grim', fragments: 10, img: 11, farm: false, index: 10, defaultTier: 52 },
-    { name: 'Woola', fragments: 10, img: 12, farm: false, index: 11, defaultTier: 53 },
-    { name: 'Leo', fragments: 10, img: 26, farm: false, index: 20, defaultTier: 54 },
-    { name: 'Griffy', fragments: 10, img: 29, farm: false, index: 22, defaultTier: 55 },
+  version: '1.0.0',
+  unitList: [
+    { name: 'Elf Sage', qtyOwned: 1, optimalQty: 15, special: '', img: 185, farm: false, index: 99, honor: 11, defaultTier: 1 },
+    { name: 'Sword Dancer', qtyOwned: 1, optimalQty: 10, special: '', img: 145, farm: false, index: 99, honor: 0, defaultTier: 2 },
+    { name: 'Forest Guardian', qtyOwned: 1, optimalQty: 0, special: '', img: 113, farm: false, index: 99, honor: 0, defaultTier: 3 },
+    { name: 'Unicorn Knight', qtyOwned: 1, optimalQty: 0, special: '', img: 38, farm: false, index: 99, honor: 0, defaultTier: 4 },
+    { name: 'Windwalker', qtyOwned: 1, optimalQty: [ 1, 20, 30 ], special: 'core', img: 177, farm: false, index: [ 1, 13, 20 ], honor: 10 , defaultTier: 5 },
+    { name: 'Sylphid', qtyOwned: 1, optimalQty: 20, special: '', img: 137, farm: true, index: 11, honor: 0, defaultTier: 6 },
+    { name: 'Druid', qtyOwned: 1, optimalQty: 0, special: '', img: 107, farm: false, index: 99, honor: 0, defaultTier: 7 },
+    { name: 'Elementalist', qtyOwned: 1, optimalQty: 27, special: '', img: 169, farm: false, index: 99, honor: 0, defaultTier: 8 },
+    { name: 'Alchemist', qtyOwned: 1, optimalQty: 0, special: '', img: 127, farm: false, index: 99, honor: 0, defaultTier: 9 },
+    { name: 'Goku', qtyOwned: 1, optimalQty: 5, special: 'instructor', img: 119, farm: false, index: 99, honor: 0, defaultTier: 10 },
+    { name: 'Ent', qtyOwned: 1, optimalQty: 0, special: '', img: 34, farm: false, index: 99, honor: 0, defaultTier: 11 },
+    { name: 'Wolf Warrior', qtyOwned: 1, optimalQty: 0, special: '', img: 55, farm: false, index: 99, honor: 0, defaultTier: 12 },
+    { name: 'Fairy', qtyOwned: 1, optimalQty: 13, special: 'core, support', img: 97, farm: true, index: 5, honor: 1, defaultTier: 13 },
+    { name: 'Hippogriff', qtyOwned: 1, optimalQty: [ 1, 10, 20 ], special: 'core, support', img: 161, farm: true, index: [ 2, 4, 9 ], honor: 8 , defaultTier: 14 },
+    // { name: 'Athos', qtyOwned: 1, optimalQty: 0, special: '', img: 201, farm: true, index: 51, honor: 0, defaultTier: 16 },
+    // { name: 'Grizzle', qtyOwned: 1, optimalQty: 0, special: '', img: 202, farm: true, index: 52, honor: 0, defaultTier: 17 },
+    // { name: 'Raven', qtyOwned: 1, optimalQty: 0, special: '', img: 203, farm: true, index: 53, honor: 0, defaultTier: 18 },
+    // { name: 'Leyak', qtyOwned: 1, optimalQty: 0, special: '', img: 204, farm: true, index: 54, honor: 0, defaultTier: 19 },
+    // { name: 'Osma', qtyOwned: 1, optimalQty: 0, special: '', img: 95, farm: true, index: 41, honor: 0, defaultTier: 20 },
+    // { name: 'Saul', qtyOwned: 1, optimalQty: 0, special: '', img: 96, farm: true, index: 42, honor: 0, defaultTier: 21 },
+    // { name: 'Rena', qtyOwned: 1, optimalQty: 0, special: '', img: 93, farm: true, index: 39, honor: 0, defaultTier: 22 },
+    // { name: 'Bernard', qtyOwned: 1, optimalQty: 0, special: '', img: 112, farm: true, index: 43, honor: 0, defaultTier: 23 },
+    // { name: 'ChiChi', qtyOwned: 1, optimalQty: 0, special: '', img: 113, farm: true, index: 44, honor: 0, defaultTier: 24 },
+    // { name: 'Mori', qtyOwned: 1, optimalQty: 0, special: '', img: 137, farm: true, index: 48, honor: 0, defaultTier: 25 },
+    // { name: 'Mambo', qtyOwned: 1, optimalQty: 0, special: '', img: 1, farm: true, index: 0, honor: 0, defaultTier: 26 },
+    // { name: 'Totem', qtyOwned: 1, optimalQty: 0, special: '', img: 16, farm: true, index: 15, honor: 0, defaultTier: 27 },
+    // { name: 'Lamp', qtyOwned: 1, optimalQty: 0, special: '', img: 13, farm: true, index: 12, honor: 0, defaultTier: 28 },
+    // { name: 'Sleepy', qtyOwned: 1, optimalQty: 0, special: '', img: 15, farm: true, index: 14, honor: 0, defaultTier: 29 },
+    // { name: 'Jingger', qtyOwned: 1, optimalQty: 0, special: '', img: 38, farm: true, index: 25, honor: 0, defaultTier: 30 },
+    // { name: 'Oscar', qtyOwned: 1, optimalQty: 0, special: '', img: 56, farm: true, index: 36, honor: 0, defaultTier: 31 },
+    // { name: 'Nimbus', qtyOwned: 1, optimalQty: 0, special: '', img: 37, farm: true, index: 24, honor: 0, defaultTier: 32 },
+    // { name: 'Mir', qtyOwned: 1, optimalQty: 0, special: '', img: 36, farm: true, index: 23, honor: 0, defaultTier: 33 },
+    // { name: 'Squirrel', qtyOwned: 1, optimalQty: 0, special: '', img: 18, farm: true, index: 17, honor: 0, defaultTier: 34 },
+    // { name: 'Phoenic', qtyOwned: 1, optimalQty: 0, special: '', img: 9, farm: true, index: 8, honor: 0, defaultTier: 35 },
+    // { name: 'Devil', qtyOwned: 1, optimalQty: 0, special: '', img: 27, farm: true, index: 21, honor: 0, defaultTier: 36 },
+    // { name: 'Chesher', qtyOwned: 1, optimalQty: 0, special: '', img: 114, farm: true, index: 45, honor: 0, defaultTier: 37 },
+    // { name: 'Winky', qtyOwned: 1, optimalQty: 0, special: '', img: 40, farm: true, index: 27, honor: 0, defaultTier: 38 },
+    // { name: 'Cora', qtyOwned: 1, optimalQty: 0, special: '', img: 42, farm: true, index: 29, honor: 0, defaultTier: 39 },
+    // { name: 'Bunny', qtyOwned: 1, optimalQty: 0, special: '', img: 41, farm: true, index: 28, honor: 0, defaultTier: 40 },
+    // { name: 'Indy', qtyOwned: 1, optimalQty: 0, special: '', img: 10, farm: true, index: 9, honor: 0, defaultTier: 41 },
+    // { name: 'Snork', qtyOwned: 1, optimalQty: 0, special: '', img: 8, farm: true, index: 7, honor: 0, defaultTier: 42 },
+    // { name: 'Piggy', qtyOwned: 1, optimalQty: 0, special: '', img: 4, farm: true, index: 3, honor: 0, defaultTier: 43 },
+    // { name: 'Rapty', qtyOwned: 1, optimalQty: 0, special: '', img: 39, farm: true, index: 26, honor: 0, defaultTier: 44 },
+    // { name: 'Black', qtyOwned: 1, optimalQty: 0, special: '', img: 57, farm: true, index: 37, honor: 0, defaultTier: 45 },
+    // { name: 'Juda', qtyOwned: 1, optimalQty: 0, special: '', img: 58, farm: true, index: 38, honor: 0, defaultTier: 46 },
+    // { name: 'Joe', qtyOwned: 1, optimalQty: 0, special: '', img: 2, farm: false, index: 1, honor: 0, defaultTier: 47 },
+    // { name: 'Mummy', qtyOwned: 1, optimalQty: 0, special: '', img: 3, farm: false, index: 2, honor: 0, defaultTier: 48 },
+    // { name: 'Potang', qtyOwned: 1, optimalQty: 0, special: '', img: 5, farm: false, index: 4, honor: 0, defaultTier: 49 },
+    // { name: 'Uni', qtyOwned: 1, optimalQty: 0, special: '', img: 14, farm: false, index: 5, honor: 0, defaultTier: 50 },
+    // { name: 'Joker', qtyOwned: 1, optimalQty: 0, special: '', img: 7, farm: false, index: 6, honor: 0, defaultTier: 51 },
+    // { name: 'Grim', qtyOwned: 1, optimalQty: 0, special: '', img: 11, farm: false, index: 10, honor: 0, defaultTier: 52 },
+    // { name: 'Woola', qtyOwned: 1, optimalQty: 0, special: '', img: 12, farm: false, index: 11, honor: 0, defaultTier: 53 },
+    // { name: 'Leo', qtyOwned: 1, optimalQty: 0, special: '', img: 26, farm: false, index: 20, honor: 0, defaultTier: 54 },
+    // { name: 'Griffy', qtyOwned: 1, optimalQty: 0, special: '', img: 29, farm: false, index: 22, honor: 0, defaultTier: 55 },
   ],
-  SHList: [],
-  KL: 100,
-  entries: 10,
-  refills: 3,
-  gemCostArray: [0, 100, 300, 700, 1500, 2700, 4300],
+  meta: ['pre-elf-core', 'elf-core', 'tinkey+icy 5* elf', 'T2 blunt elf', 'orc'],
   farmList: [],
 };
 
@@ -85,43 +80,7 @@ if (savedData) {
   data = _.cloneDeep(originalData);
 }
 
-const orderedPetList = _.orderBy(data.petList, 'index');
-for (let i = 0; i < orderedPetList.length * 2 + 10; i++) {
-  data.SHList[i] = [{}, {}];
-}
-
-// Create SH pages
-for (let i = 0; i < orderedPetList.length; i++) {
-  data.SHList[i][0].img = orderedPetList[i].img;
-  data.SHList[i][0].name = orderedPetList[i].name;
-  data.SHList[i + orderedPetList.length][0].img = orderedPetList[i].img;
-  data.SHList[i + orderedPetList.length][0].name = orderedPetList[i].name;
-  if (i < 5) {
-    data.SHList[i][1].img = orderedPetList[i].img;
-    data.SHList[i][1].name = orderedPetList[i].name;
-  } else {
-    data.SHList[(i - 2) * 2][1].img = orderedPetList[i].img;
-    data.SHList[(i - 2) * 2][1].name = orderedPetList[i].name;
-  }
-  data.SHList[i * 2 + 5][1].img = orderedPetList[i].img;
-  data.SHList[i * 2 + 5][1].name = orderedPetList[i].name;
-}
-
-// Create SH page numbers
-for (let i = 0, page = 1, pageIndex = 1; i < data.SHList.length; i++) {
-  data.SHList[i][0].KLReq = `${i * 2 + 2}`;
-  data.SHList[i][0].stage = `${page}-${pageIndex}`;
-  pageIndex += 4;
-  data.SHList[i][1].stage = `${page}-${pageIndex}`;
-  pageIndex++;
-  if (pageIndex > 20) {
-    pageIndex = 1;
-    page++;
-  }
-}
-
-// Trim off excess stages
-data.SHList.length = data.petList.length * 2 - 4;
+const orderedUnitList = _.orderBy(data.unitList, 'index');
 
 const vm = new Vue({
   el: '#app',
@@ -130,7 +89,7 @@ const vm = new Vue({
     this.updateFarmList();
   },
   watch: {
-    petList: {
+    unitList: {
       handler(val) {
         this.updateFarmList();
       },
@@ -146,77 +105,36 @@ const vm = new Vue({
     },
   },
   computed: {
-    orderedPetList() {
-      return _.orderBy(data.petList, 'index');
+    orderedUnitList() {
+      return _.orderBy(data.unitList, 'index');
     },
   },
   methods: {
-    getPet(petName) {
-      let pet = data.petList[0];
-      for (let i = 1; i < data.petList.length; i++) {
-        if (data.petList[i].name === petName) {
-          pet = data.petList[i];
+    getUnit(unitName) {
+      let unit = data.unitList[0];
+      for (let i = 1; i < data.unitList.length; i++) {
+        if (data.unitList[i].name === unitName) {
+          unit = data.unitList[i];
         }
       }
-      return pet;
+      return unit;
     },
-    reorderPetList({ oldIndex, newIndex }) {
-      const movedItem = data.petList.splice(oldIndex, 1)[0];
-      data.petList.splice(newIndex, 0, movedItem);
+    reorderUnitList({ oldIndex, newIndex }) {
+      const movedItem = data.unitList.splice(oldIndex, 1)[0];
+      data.unitList.splice(newIndex, 0, movedItem);
     },
     resetTierList() {
-      data.petList = _.orderBy(data.petList, 'defaultTier');
-    },
-    addFarmedFrags() {
-      for (const pet of data.petList) {
-        pet.fragments += pet.farmableFrags;
-      }
-      this.updateFarmList();
+      data.unitList = _.orderBy(data.unitList, 'defaultTier');
     },
     updateFarmList() {
-      // Reset farmableFrags to zero on all pets
-      _.forEach(data.petList, (obj) => {
-        _.set(obj, 'farmableFrags', 0);
+      _.forEach(data.unitList, (obj) => {
+        _.set(obj, 'qtyOwned', 0);
       });
 
       // Save data
       localStorage.setItem('data', JSON.stringify(data));
 
-      data.farmList = _.filter(data.petList, obj => obj.fragments < 330 && obj.farm);
-      let tickets = data.entries + data.refills * 5;
-
-      for (const pet of data.farmList) {
-        const availableFrags = _.filter(data.SHList, obj => obj[0].KLReq <= data.KL && (obj[0].name === pet.name || obj[1].name === pet.name));
-        pet.farmableFrags = 0;
-        if (availableFrags !== []) {
-          let firstStageFrags = 3;
-          if (pet.index >= data.petList.length - 4) {
-            // Newest pets only have 1 frag on first stage
-            firstStageFrags = 1;
-          }
-          for (let i = 0; i < availableFrags.length; i++) {
-            if (availableFrags[i][0].name === pet.name) {
-              pet.farmableFrags += firstStageFrags;
-              // Only the first first stage has 3 frags
-              if (firstStageFrags === 3) {
-                firstStageFrags = 1;
-              }
-            }
-            if (availableFrags[i][1].name === pet.name) {
-              pet.farmableFrags += 3;
-            }
-          }
-        }
-        // If we're farming more frags than needed to finish the pet, remove the excess, or more than we have remaining tickets, remove excess
-        pet.farmableFrags = pet.farmableFrags > 330 - pet.fragments ? 330 - pet.fragments : pet.farmableFrags;
-        pet.farmableFrags = pet.farmableFrags > tickets ? tickets : pet.farmableFrags;
-        pet.daysRemaining = Math.ceil((330 - pet.fragments) / pet.farmableFrags);
-        tickets -= pet.farmableFrags;
-        if (tickets <= 0) {
-          break;
-        }
-      }
-      data.farmList = _.filter(data.farmList, obj => obj.farmableFrags > 0);
+      data.farmList = _.filter(data.unitList, obj => obj.qtyOwned < obj.optimalQty && obj.farm);
     },
   },
 });
