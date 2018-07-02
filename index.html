@@ -31,8 +31,6 @@
 			<li v-for="unit in unitList" :key="unit.name" :class="unit.farm ? '' : 'disabled'"><img :src="`files/img/${unit.img}.png`"><span>{{ unit.name }}</span><input type="checkbox" v-model="unit.farm" @change="updateFarmList()"></li>
 		</ol><button @click="resetTierList">Reset</button></div>
 	<div id="inputsContainer">
-		<div id="userInputs"><label for="inputKL">KL</label><input id="inputKL" type="number" v-model.number="KL" min="0" /><br /><label for="inputEntries">Tickets</label><input id="inputEntries" type="number" v-model.number="entries" min="10" max="30" /><br /><label for="inputRefills">Refills</label><input
-				id="inputRefills" type="number" v-model.number="refills" min="0" max="6" /><br /><span id="gemCost"><img src="files/img/gem.png" style="width:12px;"> {{ gemCostArray[refills] }}</span><br /></div>
 		<div id="farmList">
 			<h4>Optimal Quantity</h4><span>Stages to farm are highlighted above</span>
 			<div class="farmRow" v-for="unit in farmList" :key="unit.name"><img :src="`files/img/${unit.img}.png`"> <span id="farmCount">x{{ unit.farmableFrags}}</span> <span id="daysRemaining">({{ unit.daysRemaining }} days)</span></div><button @click="addFarmedFrags()">Add</button></div>

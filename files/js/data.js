@@ -94,9 +94,6 @@ const vm = new Vue({
         this.updateFarmList();
       },
     },
-    KL() {
-      this.updateFarmList();
-    },
     entries() {
       this.updateFarmList();
     },
