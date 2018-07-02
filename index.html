@@ -33,7 +33,7 @@
 	<div id="inputsContainer">
 		<div id="farmList">
 			<h4>Optimal Quantity</h4><span>Stages to farm are highlighted above</span>
-			<div class="farmRow" v-for="unit in farmList" :key="unit.name"><img :src="`files/img/${unit.img}.png`"> <span id="farmCount">x{{ unit.numberLeftToFarm}}</span></div>
+			<div class="farmRow" v-for="unit in farmList" :key="unit.name"><img :src="`files/img/${unit.img}.png`"> <span id="farmCount">x{{ unit.numberLeftToFarm }}</span></div>
 	</div>
 	<div id="unitInputs">
 		<div class="unitInput" v-for="unit in orderedUnitList"><a :href="`https://www.endlessfrontierdata.com/units/${unit.img}`" :class="unit.fragments < 10 ? 'zeroStar' : unit.fragments < 30 ? 'oneStar' : unit.fragments < 80 ? 'twoStar' : unit.fragments < 180 ? 'threeStar' : unit.fragments < 330 ? 'fourStar' : 'fiveStar'"><img :src="`files/img/${unit.img}.png`"></a>

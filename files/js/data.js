@@ -112,6 +112,8 @@ const vm = new Vue({
       for (let i = 1; i < data.unitList.length; i++) {
         if (data.unitList[i].name === unitName) {
           unit = data.unitList[i];
+          
+          break;
         }
       }
       return unit;
@@ -130,7 +132,10 @@ const vm = new Vue({
 
       // Save data
       localStorage.setItem('data', JSON.stringify(data));
-      data.numberLeftToFarm = obj.optimalQty - obj.qtyOwned;
+      for (let i = 1; i < data.unitList.length; i++) {
+        data.unitList[i].numberLeftToFarm = data.unitList[i].optimalQty - data.unitList[i].qtyOwned;
+      }
+      
       data.farmList = _.filter(data.unitList, obj => obj.qtyOwned < obj.optimalQty && obj.farm);
     },
   },
