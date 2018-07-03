@@ -32,7 +32,7 @@
 		</ol><button @click="resetTierList">Reset</button></div>
 	<div id="inputsContainer">
 		<div id="farmList">
-			<h4>Optimal Quantity</h4>
+			<h4>Quantity left to farm</h4>
 			<div class="farmRow" v-for="unit in farmList" :key="unit.name"><img :src="`files/img/${unit.img}.png`"> <span id="farmCount">x{{ unit.numberLeftToFarm }}</span></div>
 	</div>
 	<div id="unitInputs">
