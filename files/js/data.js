@@ -19,7 +19,7 @@ const originalData = {
     { name: 'Alchemist', qtyOwned: 1, optimalQty: 0, special: '', img: 127, farm: false, index: 99, honor: 0, defaultTier: 9 },
     { name: 'Goku', qtyOwned: 1, optimalQty: 5, special: 'instructor', img: 119, farm: false, index: 99, honor: 0, defaultTier: 10 },
     { name: 'Ent', qtyOwned: 1, optimalQty: 0, special: '', img: 34, farm: false, index: 99, honor: 0, defaultTier: 11 },
-    { name: 'Wolf Warrior', qtyOwned: 1, optimalQty: 0, special: '', img: 55, farm: false, index: 99, honor: 0, defaultTier: 12 },
+    { name: 'Wolf Warrior', qtyOwned: 1, optimalQty: 0, special: '', img: 36, farm: false, index: 99, honor: 0, defaultTier: 12 },
     { name: 'Fairy', qtyOwned: 1, optimalQty: 13, special: 'core, support', img: 97, farm: true, index: 5, honor: 1, defaultTier: 13 },
     { name: 'Hippogriff', qtyOwned: 1, optimalQty: [ 1, 10, 20 ], special: 'core, support', img: 161, farm: true, index: [ 2, 4, 9 ], honor: 8 , defaultTier: 14 },
     // { name: 'Athos', qtyOwned: 1, optimalQty: 0, special: '', img: 201, farm: true, index: 51, honor: 0, defaultTier: 16 },
