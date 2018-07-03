@@ -32,14 +32,14 @@
 		</ol><button @click="resetTierList">Reset</button></div>
 	<div id="inputsContainer">
 		<div id="farmList">
-			<h4>Optimal Quantity</h4><span>Stages to farm are highlighted above</span>
+			<h4>Optimal Quantity</h4>
 			<div class="farmRow" v-for="unit in farmList" :key="unit.name"><img :src="`files/img/${unit.img}.png`"> <span id="farmCount">x{{ unit.numberLeftToFarm }}</span></div>
 	</div>
 	<div id="unitInputs">
-		<div class="unitInput" v-for="unit in orderedUnitList"><a :href="`https://www.endlessfrontierdata.com/units/${unit.img}`" :class="unit.fragments < 10 ? 'zeroStar' : unit.fragments < 30 ? 'oneStar' : unit.fragments < 80 ? 'twoStar' : unit.fragments < 180 ? 'threeStar' : unit.fragments < 330 ? 'fourStar' : 'fiveStar'"><img :src="`files/img/${unit.img}.png`"></a>
+		<div class="unitInput" v-for="unit in orderedUnitList"><a :href="`https://www.endlessfrontierdata.com/units/${unit.img}`" :class="unit.qtyOwned == 0 ? 'zeroStar' : unit.qtyOwned > qty.optimalQty ? 'fiveStar' : unit.qtyOwned > unit.optimalQty - 2 ? 'fourStar' : unit.qtyOwned > unit.optimalQty / 2 ? 'threeStar' : unit.qtyOwned > unit.optimalQty / 3 ? 'twoStar' : 'oneStar'"><img :src="`files/img/${unit.img}.png`"></a>
 			<div><span class="unitName">{{ unit.name }}</span><br>
 				<input
-					v-model.number="unit.fragments" @change="updateFarmList()" type="number" step="1" min="0" max="999" style="clear:both;"><br /></div>
+					v-model.number="unit.qtyOwned" @change="updateFarmList()" type="number" step="1" min="0" max="999" style="clear:both;"><br /></div>
 		</div>
 	</div>
 </div>
