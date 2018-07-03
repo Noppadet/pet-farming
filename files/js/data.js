@@ -127,14 +127,13 @@ const vm = new Vue({
     },
     updateFarmList() {
       _.forEach(data.unitList, (obj) => {
-        _.set(obj, 'qtyOwned', 0);
+        _.set(obj, 'numberLeftToFarm', 0);
       });
 
       // Save data
       localStorage.setItem('data', JSON.stringify(data));
 
       for (let i = 0; i < data.unitList.length; i++) {
-        obj.qtyOwned = data.unitList[i].qtyOwned;
         data.unitList[i].numberLeftToFarm = data.unitList[i].optimalQty - data.unitList[i].qtyOwned;
       }
       
