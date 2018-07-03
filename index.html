@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>unit Farming</title>
+	<title>Endless Frontier Unit Calculator</title>
 
 	<!-- Custom CSS -->
 	<link href="files/css/normalize.css" rel="stylesheet">
@@ -36,7 +36,7 @@
 			<div class="farmRow" v-for="unit in farmList" :key="unit.name"><img :src="`files/img/${unit.img}.png`"> <span id="farmCount">x{{ unit.numberLeftToFarm }}</span></div>
 	</div>
 	<div id="unitInputs">
-		<div class="unitInput" v-for="unit in orderedUnitList"><a :href="`https://www.endlessfrontierdata.com/units/${unit.img}`" :class="unit.qtyOwned == 0 ? 'zeroStar' : unit.qtyOwned > qty.optimalQty ? 'fiveStar' : unit.qtyOwned > unit.optimalQty - 2 ? 'fourStar' : unit.qtyOwned > unit.optimalQty / 2 ? 'threeStar' : unit.qtyOwned > unit.optimalQty / 3 ? 'twoStar' : 'oneStar'"><img :src="`files/img/${unit.img}.png`"></a>
+		<div class="unitInput" v-for="unit in orderedUnitList"><a :href="`https://www.endlessfrontierdata.com/units/${unit.img}`" :class="unit.qtyOwned == 0 ? 'zeroStar' : unit.qtyOwned > unit.optimalQty ? 'fiveStar' : unit.qtyOwned > unit.optimalQty - 2 ? 'fourStar' : unit.qtyOwned > unit.optimalQty / 2 ? 'threeStar' : unit.qtyOwned > unit.optimalQty / 3 ? 'twoStar' : 'oneStar'"><img :src="`files/img/${unit.img}.png`"></a>
 			<div><span class="unitName">{{ unit.name }}</span><br>
 				<input
 					v-model.number="unit.qtyOwned" @change="updateFarmList()" type="number" step="1" min="0" max="999" style="clear:both;"><br /></div>
