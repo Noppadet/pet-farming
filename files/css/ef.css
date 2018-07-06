@@ -254,8 +254,8 @@ h4 {
 .unitInput input,
 #userInputs input {
   width: 40px;
-  height: 16px;
-  line-height: 16px;
+  height: 20px;
+  line-height: 20px;
   font-size: 12px;
   background-color: #111;
   border: 1px solid #999;
