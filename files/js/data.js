@@ -45,7 +45,7 @@ const originalData = {
     { name: 'Abyss Mage', qtyOwned: 1, optimalQty: 30, special: '', img: 179, farm: true, index: 1, honor: 10 , defaultTier: 3 },
     { name: 'Medusa', qtyOwned: 1, optimalQty: 10, special: '', img: 139, farm: true, index: 11, honor: 0, defaultTier: 3 },
     { name: 'Dark Ninja', qtyOwned: 1, optimalQty: 1, special: 'ToT', img: 109, farm: true, index: 99, honor: 0, defaultTier: 4 },
-    { name: 'Dark Elf', qtyOwned: 1, optimalQty: 15, special: '', img: 169, farm: true, index: 99, honor: 0, defaultTier: 3 },
+    { name: 'Dark Elf', qtyOwned: 1, optimalQty: 15, special: '', img: 171, farm: true, index: 99, honor: 0, defaultTier: 3 },
     { name: 'Lich', qtyOwned: 1, optimalQty: 5, special: '', img: 129, farm: true, index: 99, honor: 0, defaultTier: 3 },
     { name: 'Dark Archer', qtyOwned: 1, optimalQty: 24, special: '', img: 99, farm: true, index: 99, honor: 0, defaultTier: 1 },
     { name: 'Dark Spirit', qtyOwned: 1, optimalQty: 20, special: '', img: 163, farm: true, index: 99, honor: 0, defaultTier: 3 },
