@@ -1,2 +1,2 @@
-# pet-farming
-A planner for spirit highlands in Endless Frontier
+# Unit Tracker for Endless Frontier
+A planner for units in Endless Frontier
