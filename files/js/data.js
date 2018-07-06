@@ -34,7 +34,7 @@ const originalData = {
     { name: 'Pilot', qtyOwned: 1, optimalQty: 5, special: '', img: 125, farm: true, index: 99, honor: 0, defaultTier: 3 },
     { name: 'Priest', qtyOwned: 1, optimalQty: 12, special: '', img: 95, farm: true, index: 99, honor: 0, defaultTier: 1 },
     { name: 'Flame Spirit', qtyOwned: 1, optimalQty: 27, special: '', img: 159, farm: true, index: 99, honor: 0, defaultTier: 3 },
-    { name: 'Hot-Blooded Xuanzang', qtyOwned: 1, optimalQty: 5, special: 'instructor', img: 117, farm: true, index: 99, honor: 0, defaultTier: 2 },
+    { name: 'HB Xuanzang', qtyOwned: 1, optimalQty: 5, special: 'instructor', img: 117, farm: true, index: 99, honor: 0, defaultTier: 2 },
     { name: 'Golem', qtyOwned: 1, optimalQty: 1, special: 'ToT', img: 14, farm: true, index: 5, honor: 1, defaultTier: 4 },
     { name: 'Fire Mage', qtyOwned: 1, optimalQty: 1, special: '', img: 16, farm: true, index: 2, honor: 8 , defaultTier: 4 },
 

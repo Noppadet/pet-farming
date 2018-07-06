@@ -29,7 +29,9 @@
 		<h4>Tier List</h4><span>Drag to re-order, uncheck to disable</span>
 		<ol id="tierList" v-sortable="{onEnd: reorderUnitList}">
 			<li v-for="unit in unitList" :key="unit.name" :class="unit.farm ? '' : 'disabled'"><img :src="`files/img/${unit.img}.png`"><span>{{ unit.name }}</span><input type="checkbox" v-model="unit.farm" @change="updateFarmList()"></li>
-		</ol><button @click="resetTierList">Reset</button></div>
+		</ol>
+		<button @click="resetTierList">Reset</button>
+	</div>
 	<div id="inputsContainer">
 		<div id="farmList">
 			<h4>Quantity left to farm</h4>
@@ -39,7 +41,8 @@
 		<div class="unitInput" v-for="unit in orderedUnitList"><a :href="`https://www.endlessfrontierdata.com/units/${unit.img}`" :class="unit.qtyOwned == 0 ? 'zeroStar' : unit.qtyOwned >= unit.optimalQty ? 'fiveStar' : unit.qtyOwned > unit.optimalQty - 2 ? 'fourStar' : unit.qtyOwned > unit.optimalQty / 2 ? 'threeStar' : unit.qtyOwned > unit.optimalQty / 3 ? 'twoStar' : 'oneStar'"><img :src="`files/img/${unit.img}.png`"></a>
 			<div><span class="unitName">{{ unit.name }}</span><br>
 				<input
-					v-model.number="unit.qtyOwned" @change="updateFarmList()" type="number" step="1" min="0" max="999" style="clear:both;"><br /></div>
+					v-model.number="unit.qtyOwned" @change="updateFarmList()" type="number" step="1" min="0" max="999" style="clear:both;"><br />
+			</div>
 		</div>
 	</div>
 </div>
